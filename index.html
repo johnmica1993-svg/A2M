@@ -372,7 +372,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Horario que respeta tu tiempo</li>
         </ul>
         <div class="why-media">
-          <video autoplay muted loop playsinline>
+          <video controls autoplay muted loop playsinline>
             <source src="IMG_9144.mov" type="video/mp4">
           </video>
         </div>
@@ -525,10 +525,10 @@
     inEl.addEventListener('keypress',function(e){if(e.key==='Enter')send()});
 
     /* DRAGGABLE — only chat-toggle opens chat */
-    (function(){var b=document.getElementById('chatToggle'),drag=false,moved=false,sx,sy,ix,iy;
-    function ds(e){drag=true;moved=false;var t=e.touches?e.touches[0]:e;sx=t.clientX;sy=t.clientY;var r=b.getBoundingClientRect();ix=r.left;iy=r.top;b.style.transition='none';b.style.cursor='grabbing'}
+    (function(){var b=document.getElementById('chatToggle'),drag=false,moved=false,started=false,sx,sy,ix,iy;
+    function ds(e){drag=true;moved=false;started=true;var t=e.touches?e.touches[0]:e;sx=t.clientX;sy=t.clientY;var r=b.getBoundingClientRect();ix=r.left;iy=r.top;b.style.transition='none';b.style.cursor='grabbing'}
     function dm(e){if(!drag)return;var t=e.touches?e.touches[0]:e;var dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>5||Math.abs(dy)>5){moved=true;e.preventDefault()}var nx=Math.max(0,Math.min(window.innerWidth-b.offsetWidth,ix+dx));var ny=Math.max(0,Math.min(window.innerHeight-b.offsetHeight,iy+dy));b.style.position='fixed';b.style.left=nx+'px';b.style.top=ny+'px';b.style.right='auto';b.style.bottom='auto'}
-    function de(){drag=false;b.style.transition='transform .2s,box-shadow .2s';b.style.cursor='grab';if(!moved)toggleChat()}
+    function de(){if(!started){return}drag=false;started=false;b.style.transition='transform .2s,box-shadow .2s';b.style.cursor='grab';if(!moved)toggleChat()}
     b.addEventListener('mousedown',ds);document.addEventListener('mousemove',dm);document.addEventListener('mouseup',de);
     b.addEventListener('touchstart',ds,{passive:false});document.addEventListener('touchmove',dm,{passive:false});document.addEventListener('touchend',de)})();
 

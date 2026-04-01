@@ -101,8 +101,10 @@
     /* ── STATS ── */
     .stats-bar{background:#fff;padding:4rem 0;border-bottom:1px solid var(--card-border)}
     .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
-    .stat-item h3{font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(1.8rem,3vw,2.4rem);color:var(--blue-electric);margin-bottom:.2rem}
-    .stat-item p{font-size:.85rem;color:var(--text-body);font-weight:400}
+    .stat-item{position:relative;display:flex;flex-direction:column;align-items:center}
+    .stat-item::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);width:80px;height:80px;border-radius:50%;border:1px solid rgba(47,128,237,.1);pointer-events:none}
+    .stat-item h3{font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(1.8rem,3vw,2.4rem);color:var(--blue-electric);margin-bottom:.2rem;position:relative;z-index:1}
+    .stat-item p{font-size:.85rem;color:var(--text-body);font-weight:400;position:relative;z-index:1}
     @media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr);gap:2rem}}
 
     /* ── LIGHT / DARK SECTIONS ── */
@@ -112,12 +114,13 @@
 
     /* ── BENEFITS ── */
     .benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-    .b-card{position:relative;background:#fff;border:1px solid var(--card-border);border-radius:16px;padding:2rem 1.5rem;transition:all .3s;overflow:hidden}
+    .b-card{position:relative;background:#fff;border:1px solid var(--card-border);border-radius:20px;padding:32px;transition:all .3s;overflow:hidden}
     .b-card::before{content:'';position:absolute;top:0;left:0;width:0;height:3px;background:var(--blue-electric);transition:width .4s}
     .b-card:hover{transform:translateY(-4px);border-color:var(--blue-electric);box-shadow:0 12px 40px rgba(47,128,237,.07)}
     .b-card:hover::before{width:100%}
-    .b-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:rgba(47,128,237,.08);border-radius:12px;margin-bottom:1.2rem;color:var(--blue-electric)}
-    .b-icon svg{width:22px;height:22px}
+    .b-card:hover .b-icon{background:rgba(47,128,237,.12);border-color:rgba(47,128,237,.35)}
+    .b-icon{width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(47,128,237,.08),rgba(47,128,237,.04));border:1px solid rgba(47,128,237,.15);border-radius:50%;margin-bottom:1.2rem;color:var(--blue-electric);transition:all .3s}
+    .b-icon svg{width:24px;height:24px}
     .b-card h3{font-size:1rem;font-weight:700;margin-bottom:.45rem;color:var(--text-dark)}
     .b-card p{font-size:.86rem;color:var(--text-body);line-height:1.6;font-weight:400}
     @media(max-width:1024px){.benefits-grid{grid-template-columns:repeat(2,1fr)}}
@@ -125,9 +128,11 @@
 
     /* ── TASKS ── */
     .tasks-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-    .t-card{background:#fff;border:1px solid var(--card-border);border-radius:16px;padding:2rem 1.5rem;text-align:center;transition:all .3s}
-    .t-card:hover{transform:translateY(-4px);border-color:var(--blue-electric)}
-    .t-num{font-family:'Sora',sans-serif;font-weight:800;font-size:2.4rem;color:rgba(47,128,237,.1);line-height:1;margin-bottom:.5rem}
+    .t-card{background:#fff;border:1px solid var(--card-border);border-radius:20px;padding:32px 24px;text-align:center;transition:all .3s}
+    .t-card:hover{transform:translateY(-4px);border-color:var(--blue-electric);box-shadow:0 12px 40px rgba(47,128,237,.07)}
+    .t-card:hover .t-num-circle{border-color:rgba(47,128,237,.5);transform:rotate(10deg)}
+    .t-num-circle{width:72px;height:72px;display:flex;align-items:center;justify-content:center;border:2px solid rgba(47,128,237,.2);border-radius:50%;margin:0 auto 1rem;transition:all .3s}
+    .t-num{font-family:'Sora',sans-serif;font-weight:700;font-size:28px;color:var(--blue-electric);line-height:1}
     .t-card h3{font-size:.95rem;font-weight:700;margin-bottom:.4rem;color:var(--text-dark)}
     .t-card p{font-size:.84rem;color:var(--text-body);font-weight:400;line-height:1.6}
     @media(max-width:1024px){.tasks-grid{grid-template-columns:repeat(2,1fr)}}
@@ -144,7 +149,7 @@
     @media(max-width:768px){.why-grid{grid-template-columns:1fr}.why-media{order:-1}}
 
     /* ── JOB ── */
-    .job-card{max-width:800px;margin:0 auto;background:#fff;border:1px solid var(--card-border);border-radius:20px;padding:3rem;position:relative;overflow:hidden}
+    .job-card{max-width:800px;margin:0 auto;background:#fff;border:1px solid rgba(47,128,237,.1);border-radius:20px;padding:3rem;position:relative;overflow:hidden}
     .job-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue-electric),var(--blue-glow))}
     .job-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
     .job-detail{display:flex;align-items:flex-start;gap:.7rem}
@@ -351,10 +356,10 @@
     <div class="container">
       <h2 class="section-title st-light reveal">TU DÍA EN A2M</h2>
       <div class="tasks-grid">
-        <div class="t-card reveal"><div class="t-num">01</div><h3>Contactar Clientes</h3><p>Llama a clientes potenciales desde base de datos asignada</p></div>
-        <div class="t-card reveal"><div class="t-num">02</div><h3>Ofrecer Servicios</h3><p>Explica servicios de luz y gas de forma clara y persuasiva</p></div>
-        <div class="t-card reveal"><div class="t-num">03</div><h3>Cerrar Ventas</h3><p>Maneja objeciones y cierra acuerdos exitosamente</p></div>
-        <div class="t-card reveal"><div class="t-num">04</div><h3>Registrar Información</h3><p>Ingresa datos correctamente en el sistema</p></div>
+        <div class="t-card reveal"><div class="t-num-circle"><div class="t-num">01</div></div><h3>Contactar Clientes</h3><p>Llama a clientes potenciales desde base de datos asignada</p></div>
+        <div class="t-card reveal"><div class="t-num-circle"><div class="t-num">02</div></div><h3>Ofrecer Servicios</h3><p>Explica servicios de luz y gas de forma clara y persuasiva</p></div>
+        <div class="t-card reveal"><div class="t-num-circle"><div class="t-num">03</div></div><h3>Cerrar Ventas</h3><p>Maneja objeciones y cierra acuerdos exitosamente</p></div>
+        <div class="t-card reveal"><div class="t-num-circle"><div class="t-num">04</div></div><h3>Registrar Información</h3><p>Ingresa datos correctamente en el sistema</p></div>
       </div>
     </div>
   </section>

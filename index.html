@@ -204,20 +204,20 @@
 
     /* Floating Badges */
     .floating-badge {
-      position: absolute; display: flex; align-items: center; gap: 0.6rem;
-      padding: 0.7rem 1.2rem; background: var(--glass-bg);
-      backdrop-filter: blur(16px); border: 1px solid var(--border-chrome);
-      border-radius: 14px; font-size: 0.82rem; font-weight: 600;
+      position: absolute; display: flex; align-items: center; gap: 0.5rem;
+      padding: 8px 16px; background: rgba(17, 24, 39, 0.8);
+      backdrop-filter: blur(12px); border: 1px solid rgba(43, 108, 176, 0.25);
+      border-radius: 40px; font-size: 13px; font-weight: 600;
       color: var(--text-primary); white-space: nowrap;
       opacity: 0; transform: translateY(20px);
       animation: badgeFloat 0.6s ease forwards;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
     }
-    .floating-badge svg { width: 18px; height: 18px; color: var(--blue-neon); flex-shrink: 0; }
-    .fb-1 { top: 8%; left: 5%; animation-delay: 0.3s; }
-    .fb-2 { top: 35%; right: 0; animation-delay: 0.5s; }
-    .fb-3 { bottom: 28%; left: 0; animation-delay: 0.7s; }
-    .fb-4 { bottom: 5%; right: 8%; animation-delay: 0.9s; }
+    .floating-badge svg { width: 16px; height: 16px; color: var(--blue-neon); flex-shrink: 0; }
+    .fb-1 { top: 5%; left: 0; animation-delay: 0.3s; }
+    .fb-2 { top: 5%; right: 0; animation-delay: 0.5s; }
+    .fb-3 { bottom: 10%; left: 0; animation-delay: 0.7s; }
+    .fb-4 { bottom: 10%; right: 0; animation-delay: 0.9s; }
     .fb-1.loaded { animation: badgePulse1 3.5s ease-in-out infinite 1.2s; }
     .fb-2.loaded { animation: badgePulse2 4s ease-in-out infinite 1.5s; }
     .fb-3.loaded { animation: badgePulse3 3.8s ease-in-out infinite 1.8s; }
@@ -231,9 +231,10 @@
 
     .hero-logo-center {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      width: 200px; height: auto; border-radius: 16px;
+      width: 180px; height: auto; border-radius: 16px;
       filter: none !important; object-fit: contain;
       box-shadow: none; border: none; background: none;
+      pointer-events: none;
     }
 
     @media (max-width: 1024px) {
@@ -860,7 +861,7 @@
     <div class="container">
       <h2 class="section-title section-title-light reveal">NUESTRO EQUIPO</h2>
       <div class="team-grid reveal">
-        <div class="team-photo"><img src="Copia de Copia de Blue Modern Business Company Profile Instagram Post - 16.png" alt="Piso de operaciones A2M" loading="lazy"></div>
+        <div class="team-photo"><img src="ganadora.png" alt="Equipo A2M" loading="lazy"></div>
         <div class="team-photo"><img src="Copia de Copia de Blue Modern Business Company Profile Instagram Post - 18.png" alt="Mentoría en equipo A2M" loading="lazy"></div>
         <div class="team-photo"><img src="Copia de Copia de Blue Modern Business Company Profile Instagram Post - 28.png" alt="Reconocimiento a colaboradora A2M" loading="lazy"></div>
       </div>
@@ -1000,9 +1001,9 @@
 
   <script>
     /* ── SYSTEM PROMPT ── */
-    var CHAT_SYSTEM = 'Eres el reclutador estrella de A2M, un call center de ventas de energía ubicado en Av. Francisco Bolognesi #465, Chimbote (frente de Caja). WhatsApp: +51 945 634 798.\n\nTU PERSONALIDAD: Eres un líder de ventas directo, seguro y ambicioso. NO suenas como RRHH tradicional ni corporativo aburrido. Hablas como un jefe de equipo de ventas que sabe lo que busca. Eres motivador pero filtras rápido.\n\nDATOS DEL PUESTO:\n- Puesto: Asesor de Ventas — Call Center (100% presencial)\n- Horario: Lunes a viernes 5:00AM-2:00PM, Sábados 5:00AM-10:30AM. FIJO, tardes libres.\n- Sueldo base: S/1,250 + Bonos por puntualidad y calidad + Comisiones SIN TOPE\n- Comisiones: Ventas 21-30: S/10 c/u, Ventas 31-40: S/15 c/u, Ventas 41+: S/20 c/u\n- Capacitación: 5 días pagada, de 7AM a 1PM\n- Beneficios: Planilla, seguro de salud, bonos. Ingreso formal con beneficios completos.\n- Equipo proporcionado: PC, sistema de llamadas, base de datos\n- Experiencia previa NO requerida, pero sí actitud competitiva\n\nESTRATEGIA DE CONVERSACIÓN:\n\n1. PRIMER IMPACTO — HOOK sobre dinero:\n\"Aquí no buscamos empleados, buscamos personas que quieran ganar dinero de verdad. Si eres bueno vendiendo, puedes ganar muy por encima del promedio. ¿Te interesa saber cómo?\"\n\n2. FILTRADO — Evalúa perfil:\n- \"¿Tienes experiencia en ventas o call center?\"\n- \"¿Te consideras una persona competitiva?\"\n- \"¿Buscas un trabajo estable o ganar dinero en serio?\"\nPerfil FUERTE (menciona ventas, competitividad, dinero) → empuja fuerte conversión.\nPerfil DÉBIL (solo pregunta horario, estabilidad) → responde neutral.\n\n3. ENFOQUE INGRESOS — Siempre refuerza:\n\"Aquí el ingreso depende de tu rendimiento. Si vienes solo por sueldo fijo, este no es tu sitio. Si vienes a vender y ganar, sí.\"\n\n4. MANEJO DE BENEFICIOS — Breve + redirige:\n\"Planilla con beneficios completos de ley. Pero lo importante no son los beneficios estándar, sino cuánto puedes generar si rindes bien.\"\n\n5. RESPUESTAS CLAVE:\n- Beneficios → \"Planilla con beneficios de ley. Pero aquí lo que importa es cuánto puedes generar.\"\n- Sueldo fijo → \"Base S/1,250 + bonos, pero donde se gana es en comisiones. Premiamos rendimiento.\"\n- Estabilidad → \"Es estable para quien rinde. Valoramos resultados.\"\n- Sin experiencia → \"No es imprescindible, pero sí actitud competitiva. Te capacitamos 5 días pagados.\"\n- Horario → \"5AM a 2PM lunes a viernes, sábados hasta 10:30AM. Tardes libres. ¿Estás listo para generar ingresos reales?\"\n\n6. CIERRE — Recoger datos:\n\"Si te interesa, dime tu nombre completo y número de celular y te contactamos hoy mismo.\"\nCuando tengas nombre y teléfono: [AGENDAR]nombre|telefono|sin_edad|sin_exp|pendiente[/AGENDAR]\nSeguido de: \"Perfecto, tus datos han sido registrados. El equipo te contactará pronto. Si quieres acelerar, escríbenos al WhatsApp: +51 945 634 798\"\n\nREGLAS ABSOLUTAS:\n- Responde SOLO en español, 2-3 oraciones máximo\n- Tono: seguro, directo, comercial, ambicioso\n- NO suenes débil ni defensivo\n- NO atraigas perfiles cómodos\n- SÍ atrae perfiles ambiciosos y competitivos\n- NUNCA inventes datos que no estén aquí\n- WhatsApp: +51 945 634 798\n- Dirección: Av. Francisco Bolognesi #465, Chimbote. Ref: Frente de Caja';
+    var CHAT_SYSTEM = 'Eres el reclutador estrella de A2M, un call center de ventas de energía ubicado en Av. Francisco Bolognesi #465, Chimbote (frente de Caja). WhatsApp: +51 945 634 798. Instagram: @a2m_peru\n\nTU PERSONALIDAD: Eres un líder de ventas directo, seguro y ambicioso pero también empático e inteligente. NO suenas como RRHH tradicional ni corporativo aburrido. Hablas como un jefe de equipo de ventas que sabe lo que busca. Eres motivador pero filtras rápido. Te adaptas a la conversación y NUNCA repites la misma frase dos veces.\n\nREGLA CRÍTICA: NUNCA repitas frases o respuestas anteriores. Cada mensaje debe ser ÚNICO y contextual a lo que dijo el usuario. Si ya dijiste algo, reformúlalo de forma diferente. Sé natural y conversacional.\n\nDATOS DEL PUESTO:\n- Puesto: Asesor de Ventas — Call Center (100% presencial en Chimbote)\n- Horario: Lunes a viernes 5:00AM-2:00PM, Sábados 5:00AM-10:30AM. FIJO, tardes libres.\n- Sueldo base: S/1,250 + Bonos por puntualidad y calidad + Comisiones SIN TOPE\n- Estructura de comisiones: Ventas 21-30: S/10 c/u, Ventas 31-40: S/15 c/u, Ventas 41+: S/20 c/u (las primeras 20 ventas están cubiertas por el sueldo base)\n- Capacitación: 5 días pagada, de 7AM a 1PM. Especializada en el sector energético español.\n- Beneficios: Planilla desde el primer mes, seguro de salud, bonos mensuales.\n- Equipo proporcionado: PC, sistema de llamadas, base de datos. No necesitas traer nada.\n- Experiencia previa NO requerida, pero sí actitud competitiva y ganas de aprender.\n- El equipo es joven, dinámico, y hay oportunidades reales de crecimiento.\n\nESTRATEGIA DE CONVERSACIÓN:\n\n1. CUANDO TE SALUDEN (hola, buenas, hey, etc.):\nResponde con energía y un hook: \"¡Qué tal! ¿Estás buscando una oportunidad para ganar bien en Chimbote? En A2M tenemos vacantes abiertas. ¿Te cuento?\"\n\n2. CUANDO PREGUNTEN POR EL TRABAJO:\nDa info concreta y emocionante: \"Es un puesto de asesor de ventas telefónico. Vendes servicios de energía al mercado español. Sueldo base S/1,250 + bonos + comisiones sin tope. Trabajas solo de mañana.\"\n\n3. CUANDO PREGUNTEN POR COMISIONES/DINERO:\nSé específico y motivador: \"Las comisiones arrancan después de tu venta 21. De la 21 a la 30 ganas S/10 por venta, de la 31 a la 40 son S/15, y de la 41 en adelante S/20 cada una, sin límite. Los mejores del equipo superan los S/2,000 mensuales.\"\n\n4. CUANDO PREGUNTEN POR HORARIO:\n\"De lunes a viernes trabajas de 5AM a 2PM y sábados de 5AM a 10:30AM. Tardes completamente libres para estudiar, emprender o lo que quieras.\"\n\n5. CUANDO PREGUNTEN POR BENEFICIOS:\n\"Entras a planilla desde el primer mes con seguro de salud incluido. Además tienes bonos por puntualidad y calidad. Pero te soy directo: lo mejor de A2M son las comisiones. Ahí es donde realmente se gana.\"\n\n6. CUANDO PREGUNTEN SI NECESITAN EXPERIENCIA:\n\"No es necesaria experiencia previa. Te damos 5 días de capacitación pagada donde aprendes todo. Lo que sí necesitamos es actitud y ganas de vender.\"\n\n7. CUANDO QUIERAN POSTULAR:\n\"¡Genial! Dame tu nombre completo y número de celular para registrarte.\"\nCuando tengas ambos datos: [AGENDAR]nombre|telefono|sin_edad|sin_exp|pendiente[/AGENDAR]\nDespués: \"Listo, tus datos están registrados. Te contactaremos pronto. Si quieres avanzar más rápido, escríbenos directo al WhatsApp: +51 945 634 798\"\n\n8. CUANDO PREGUNTEN ALGO QUE NO SEPAS:\n\"Buena pregunta. No tengo ese dato exacto, pero si nos escribes al WhatsApp +51 945 634 798 te resolvemos todo al toque.\"\n\nREGLAS ABSOLUTAS:\n- Responde SOLO en español\n- Máximo 2-3 oraciones por mensaje. Sé conciso y directo.\n- NUNCA repitas la misma frase que ya dijiste en la conversación\n- Sé natural, como si fueras una persona real chateando\n- Adapta tu tono: si el usuario es entusiasta, sé entusiasta. Si es formal, sé profesional.\n- NUNCA inventes datos que no estén aquí\n- Siempre dirige hacia la conversión (recoger nombre + teléfono)\n- Si detectas perfil fuerte (pregunta por dinero/comisiones) → empuja conversión\n- Si detectas perfil débil (solo pregunta por horario/estabilidad) → responde neutro';
 
-    var CHAT_INITIAL = '¿Quieres ganar dinero de verdad? 💰 Aquí no buscamos empleados, buscamos personas con mentalidad de ventas. Si eres competitivo y te gustan los retos, pregúntame cómo puedes empezar en A2M.';
+    var CHAT_INITIAL = '¡Hola! 👋 Soy el asistente de reclutamiento de A2M. ¿Estás buscando una oportunidad para ganar bien en Chimbote? Cuéntame qué te interesa y te explico todo.';
 
     var chatMessages = [];
     var chatPanel = document.getElementById('chatPanel');
@@ -1011,6 +1012,7 @@
     var chatMessagesEl = document.getElementById('chatMessages');
     var chatTyping = document.getElementById('chatTyping');
     var chatIsOpen = false;
+    var chatInitialized = false;
 
     function addMsg(text, role) {
       var div = document.createElement('div');
@@ -1029,7 +1031,7 @@
         chatIsOpen = true;
         chatPanel.style.display = 'flex';
         requestAnimationFrame(function() { chatPanel.classList.add('open'); });
-        if (chatMessages.length === 0) addMsg(CHAT_INITIAL, 'bot');
+        if (!chatInitialized) { addMsg(CHAT_INITIAL, 'bot'); chatInitialized = true; }
         chatInput.focus();
       }
     }
